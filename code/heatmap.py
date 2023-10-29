@@ -5,7 +5,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import argparse
 
-#Interaction types between the ligand and the residues: wc, wide contact, ;cc, close contact, ; bo, big overlap,  ; so, small overlap, ; hb, hydrogen bond, ; all, include all the interaction types mentioned previously
 intypes = ['wc','cc','bo','so','hb','all']
 
 def heatmap(filename): #read in res_intfreq_dict.dat
@@ -30,5 +29,5 @@ if __name__ == '__main__':
     intdat = args.intdat
     
     heatmap(intdat)
-#For the seed and solvent, there are only one row 
+#For the seed and solvent, there are only one row in the heatmap
 #For the residues, there are two rows: mc (top) and sc (bottom)

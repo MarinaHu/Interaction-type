@@ -8,7 +8,7 @@ chain = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N']
 restype = ['mc','sc','ligand','solvent']
 #The atoms included in the main chain residue
 mc = ['N', 'CA', 'C', 'O', 'H', 'HA', 'OXT', 'HA2', 'HA3', 'H?', 'W']
-#Interaction types between the ligand and the residues: wc, wide contact, ;cc, close contact, ; bo, big overlap,  ; so, small overlap, ; hb, hydrogen bond, ; all, include all the interaction types mentioned previously
+#Interaction types between the ligand and the residues: wc, wide contact with an interactomic gap distance >= 0.25 Anstrom; cc, close contact with an interactomic gap distance < 0.25 Angstrom; bo, big overlap with overlapping van der Waal radii >= 0.4 Anstronm; so, small overlap with overlapping van der Waal radii < 0.4 Anstronm; hb, hydrogen bond; all, include all the interaction types mentioned previously.
 intypes = ['wc','cc','bo','so','hb','all']
 
 #Organize the format for the seed
@@ -128,7 +128,6 @@ def gen_int(filename, seed, solvent):
                         if intype == intypes[i]:
                             res_intfreq_dict[b][0][i] += 1
                             res_intfreq_dict[b][0][5] += 1                                
-                            #print(atom1)
                             if atom2 not in res_atom_dict[b][0][i]:
                                 res_atom_dict[b][0][i].append(atom2)
                                 if atom2 not in res_atom_dict[b][0][5]:
@@ -156,7 +155,6 @@ def gen_int(filename, seed, solvent):
                             if intype == intypes[i]:
                                 res_intfreq_dict[a][0][i] += 1
                                 res_intfreq_dict[a][0][5] += 1 
-                                #print(res_atom_dict[a][0][2])
                                 if atom1 not in res_atom_dict[a][0][i]:
                                     res_atom_dict[a][0][i].append(atom1)
                                     if atom1 not in res_atom_dict[a][0][5]:
@@ -268,5 +266,3 @@ if __name__ == '__main__':
     res_chain_dict, res_atom_dict, res_intfreq_dict, solv = gen_int(probe, seed, solvent)
     w_res_atom_int(res_chain_dict, res_atom_dict, res_intfreq_dict, solv, seed)
     w_res_atom_freq(res_chain_dict, res_intfreq_dict, solv, seed) 
-    
-#command example: python3 int_dat.py -probe 2cht_h_modify.probe -s A:203 -slv HOH
