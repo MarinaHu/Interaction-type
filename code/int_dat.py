@@ -8,7 +8,7 @@ chain = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N']
 restype = ['mc','sc','ligand','solvent']
 #The atoms included in the main chain residue
 mc = ['N', 'CA', 'C', 'O', 'H', 'HA', 'OXT', 'HA2', 'HA3', 'H?', 'W']
-#Interaction types between the ligand and the residues: wc, wide contact with an interactomic gap distance >= 0.25 Anstrom; cc, close contact with an interactomic gap distance < 0.25 Angstrom; bo, big overlap with overlapping van der Waal radii >= 0.4 Anstronm; so, small overlap with overlapping van der Waal radii < 0.4 Anstronm; hb, hydrogen bond; all, include all the interaction types mentioned previously.
+#Interaction types between the ligand and the residues: wc, wide contact with an interactomic gap distance >= 0.25 Angstrom; cc, close contact with an interactomic gap distance < 0.25 Angstrom; bo, big overlap with overlapping van der Waal radii >= 0.4 Angstrom; so, small overlap with overlapping van der Waal radii < 0.4 Angstrom; hb, hydrogen bond; all, include all the interaction types mentioned previously.
 intypes = ['wc','cc','bo','so','hb','all']
 
 #Organize the format for the seed
