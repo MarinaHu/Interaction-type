@@ -31,3 +31,5 @@ if __name__ == '__main__':
     heatmap(intdat)
 #For the seed and solvent, there are only one row in the heatmap
 #For the residues, there are two rows: mc (top) and sc (bottom)
+
+#python3 heatmap.py -hm res_intfreq_dict.dat
